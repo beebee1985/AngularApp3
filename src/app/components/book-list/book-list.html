@@ -1,0 +1,90 @@
+<!-- Book List Component -->
+<div class="book-list-container">
+  <!-- Header Section -->
+  <div class="header">
+    <h1>📚 Book Library</h1>
+    <p>Discover and manage your favorite books</p>
+    
+    <!-- Navigation Buttons -->
+    <div class="nav-buttons">
+      <button 
+        class="btn btn-primary" 
+        routerLink="/add"
+        title="Add New Book">
+        ➕ Add New Book
+      </button>
+      <button 
+        class="btn btn-secondary" 
+        (click)="loadBooks()"
+        title="Refresh List">
+        🔄 Refresh
+      </button>
+    </div>
+  </div>
+
+  <!-- Loading State -->
+  <div *ngIf="loading" class="loading">
+    <div class="spinner"></div>
+    <p>Loading books...</p>
+  </div>
+
+  <!-- Error State -->
+  <div *ngIf="error && !loading" class="error-message">
+    <p>⚠️ {{ error }}</p>
+    <p><small>Displaying sample data for demonstration purposes.</small></p>
+  </div>
+
+  <!-- Books Grid -->
+  <div *ngIf="!loading" class="books-grid">
+    <div *ngFor="let book of books" class="book-card">
+      <!-- Book Image -->
+      <div class="book-image">
+        <img 
+          [src]="book.imageUrl || 'https://via.placeholder.com/200x300/6C757D/FFFFFF?text=No+Image'" 
+          [alt]="book.title"
+          loading="lazy">
+      </div>
+
+      <!-- Book Information -->
+      <div class="book-info">
+        <h3 class="book-title">{{ book.title }}</h3>
+        <p class="book-author">👤 {{ book.author }}</p>
+        <p class="book-category">📂 {{ book.category }}</p>
+        <p class="book-pages">📄 {{ book.pages }} pages</p>
+        <p class="book-isbn">🏷️ ISBN: {{ book.isbn }}</p>
+        <p class="book-date">📅 Published: {{ book.publishedDate | date:'mediumDate' }}</p>
+        
+        <!-- Book Description -->
+        <div class="book-description">
+          <p>{{ book.description }}</p>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="book-actions">
+          <button 
+            class="btn btn-danger btn-small"
+            (click)="deleteBook(book.id)"
+            title="Delete Book">
+            🗑️ Delete
+          </button>
+          <button 
+            class="btn btn-info btn-small"
+            title="Book ID: {{book.id}}">
+            ID: {{ book.id }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Empty State -->
+  <div *ngIf="!loading && books.length === 0" class="empty-state">
+    <h2>📖 No Books Found</h2>
+    <p>Start building your library by adding your first book!</p>
+    <button 
+      class="btn btn-primary"
+      routerLink="/add">
+      ➕ Add Your First Book
+    </button>
+  </div>
+</div>

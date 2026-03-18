@@ -1,0 +1,42 @@
+<!-- Book Management Application -->
+<div class="app-container">
+  <!-- Header Navigation -->
+  <header class="app-header">
+    <div class="header-content">
+      <!-- App Logo/Title -->
+      <div class="app-logo">
+        <h1 routerLink="/" class="logo-text">📚 Book Manager</h1>
+        <p class="app-subtitle">Your Personal Library System</p>
+      </div>
+      
+      <!-- Navigation Menu -->
+      <nav class="main-nav">
+        <a 
+          routerLink="/list" 
+          routerLinkActive="active"
+          class="nav-link">
+          📋 Library
+        </a>
+        <a 
+          routerLink="/add" 
+          routerLinkActive="active"
+          class="nav-link">
+          ➕ Add Book
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <div class="footer-content">
+      <p>&copy; 2024 Book Manager - MWD4B Angular Assignment 3</p>
+      <p class="footer-tech">Built with Angular {{ title() }} & TypeScript</p>
+    </div>
+  </footer>
+</div>
