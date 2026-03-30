@@ -254,35 +254,35 @@
   .add-book-container {
     padding: 15px;
   }
-  
+
   .header h1 {
     font-size: 2rem;
   }
-  
+
   .form-grid {
     grid-template-columns: 1fr;
     gap: 15px;
   }
-  
+
   .book-form {
     padding: 20px;
   }
-  
+
   .form-actions {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .btn {
     width: 100%;
     justify-content: center;
   }
-  
+
   .preview-card {
     flex-direction: column;
     text-align: center;
   }
-  
+
   .image-input-group {
     flex-direction: column;
   }
@@ -321,6 +321,10 @@ textarea.form-control {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

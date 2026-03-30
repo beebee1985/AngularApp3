@@ -24,6 +24,7 @@ A comprehensive book management application built with Angular frontend and PHP/
 ## 🏗️ Architecture
 
 ### Frontend (Angular)
+
 - **Components:** BookList, AddBook, App
 - **Services:** BookService (HTTP Client)
 - **Models:** Book interface
@@ -31,6 +32,7 @@ A comprehensive book management application built with Angular frontend and PHP/
 - **Styling:** CSS with responsive design
 
 ### Backend (PHP/MySQL)
+
 - **API:** RESTful PHP endpoints
 - **Database:** MySQL with optimized schema
 - **CORS:** Configured for Angular frontend
@@ -41,6 +43,7 @@ A comprehensive book management application built with Angular frontend and PHP/
 ## 🛠️ Prerequisites
 
 ### Software Requirements
+
 - **XAMPP** (Apache, MySQL, PHP)
 - **Node.js** (v18 or higher)
 - **Angular CLI** (v17 or higher)
@@ -48,6 +51,7 @@ A comprehensive book management application built with Angular frontend and PHP/
 - **Git** for version control
 
 ### Recommended Tools
+
 - **Visual Studio Code**
 - **Postman** (for API testing)
 - **phpMyAdmin** (included with XAMPP)
@@ -57,12 +61,14 @@ A comprehensive book management application built with Angular frontend and PHP/
 ## 📥 Installation & Setup
 
 ### 1. Clone the Repository
+
 ```bash
 git clone https://github.com/[username]/AngularApp3.git
 cd AngularApp3
 ```
 
 ### 2. Frontend Setup (Angular)
+
 ```bash
 # Install dependencies
 npm install
@@ -76,11 +82,13 @@ ng serve
 ### 3. Backend Setup (XAMPP/PHP)
 
 #### A. Start XAMPP Services
+
 1. Open **XAMPP Control Panel**
 2. Start **Apache** web server
 3. Start **MySQL** database server
 
 #### B. Database Setup
+
 1. Open **phpMyAdmin** (http://localhost/phpmyadmin)
 2. Import the database script:
    - Click **Import** tab
@@ -88,7 +96,9 @@ ng serve
    - Click **Go** to execute
 
 #### C. API Setup
+
 1. Copy the backend folder to XAMPP htdocs:
+
    ```bash
    # Copy backend files to XAMPP
    cp -r backend /xampp/htdocs/book-api
@@ -111,6 +121,7 @@ ng serve
 ### Application Features
 
 #### 📋 Book Library (/list)
+
 - View all books in a responsive grid layout
 - See book details: title, author, category, pages, etc.
 - Delete books with confirmation
@@ -118,11 +129,12 @@ ng serve
 - Refresh book list
 
 #### ➕ Add New Book (/add)
+
 - Comprehensive form with validation
 - Required fields: title, author, description, ISBN, category, pages
 - Optional fields: publication date, cover image URL
 - Live preview of book information
-- Form reset functionality  
+- Form reset functionality
 - Auto-navigation after successful submission
 
 ---
@@ -130,6 +142,7 @@ ng serve
 ## 🗄️ Database Schema
 
 ### Books Table
+
 ```sql
 CREATE TABLE books (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -179,6 +192,7 @@ AngularApp3/
 ## 📚 Technologies Used
 
 ### Frontend
+
 - **Angular 17** - Web application framework
 - **TypeScript** - Programming language
 - **RxJS** - Reactive programming
@@ -186,12 +200,14 @@ AngularApp3/
 - **HTML5** - Markup structure
 
 ### Backend
+
 - **PHP 8** - Server-side scripting
 - **MySQL 8** - Database management
 - **Apache** - Web server
 - **REST API** - Service architecture
 
 ### Development Tools
+
 - **Angular CLI** - Development tooling
 - **npm** - Package management
 - **Git** - Version control

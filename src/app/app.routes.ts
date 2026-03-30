@@ -9,13 +9,13 @@ import { AddBookComponent } from './components/add-book/add-book';
 export const routes: Routes = [
   // Default route - redirect to book list
   { path: '', redirectTo: '/list', pathMatch: 'full' },
-  
+
   // Book list route - displays all books
   { path: 'list', component: BookListComponent, title: 'Book Library' },
-  
+
   // Add book route - form for adding new books
   { path: 'add', component: AddBookComponent, title: 'Add New Book' },
-  
+
   // Wildcard route - redirect any unknown paths to book list
-  { path: '**', redirectTo: '/list' }
+  { path: '**', redirectTo: '/list' },
 ];

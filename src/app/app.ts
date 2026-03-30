@@ -9,11 +9,11 @@ import { RouterOutlet, RouterModule } from '@angular/router';
   selector: 'app-root',
   imports: [RouterOutlet, RouterModule],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
 export class App {
   protected readonly title = signal('AngularApp3');
-  
+
   constructor() {
     console.log('📚 Book Manager Application initialized');
   }

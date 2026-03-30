@@ -106,8 +106,12 @@
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Error Message Styles */
@@ -139,7 +143,9 @@
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   border: 1px solid #e9ecef;
 }
 
@@ -231,21 +237,21 @@
   .book-list-container {
     padding: 15px;
   }
-  
+
   .header h1 {
     font-size: 2rem;
   }
-  
+
   .books-grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  
+
   .nav-buttons {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .book-actions {
     flex-direction: column;
   }

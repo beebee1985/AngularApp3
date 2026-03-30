@@ -14,21 +14,18 @@ export class BookService {
   private apiUrl = 'http://localhost/book-api'; // PHP backend URL
   private httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/json'
-    })
+      'Content-Type': 'application/json',
+    }),
   };
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   /**
    * Get all books from the backend
    * @returns Observable<Book[]>
    */
   getAllBooks(): Observable<Book[]> {
-    return this.http.get<Book[]>(`${this.apiUrl}/books.php`)
-      .pipe(
-        catchError(this.handleError)
-      );
+    return this.http.get<Book[]>(`${this.apiUrl}/books.php`).pipe(catchError(this.handleError));
   }
 
   /**
@@ -37,10 +34,9 @@ export class BookService {
    * @returns Observable<Book>
    */
   getBookById(id: number): Observable<Book> {
-    return this.http.get<Book>(`${this.apiUrl}/books.php?id=${id}`)
-      .pipe(
-        catchError(this.handleError)
-      );
+    return this.http
+      .get<Book>(`${this.apiUrl}/books.php?id=${id}`)
+      .pipe(catchError(this.handleError));
   }
 
   /**
@@ -49,10 +45,9 @@ export class BookService {
    * @returns Observable<any>
    */
   addBook(book: Book): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/books.php`, JSON.stringify(book), this.httpOptions)
-      .pipe(
-        catchError(this.handleError)
-      );
+    return this.http
+      .post<any>(`${this.apiUrl}/books.php`, JSON.stringify(book), this.httpOptions)
+      .pipe(catchError(this.handleError));
   }
 
   /**
@@ -61,10 +56,9 @@ export class BookService {
    * @returns Observable<any>
    */
   updateBook(book: Book): Observable<any> {
-    return this.http.put<any>(`${this.apiUrl}/books.php`, JSON.stringify(book), this.httpOptions)
-      .pipe(
-        catchError(this.handleError)
-      );
+    return this.http
+      .put<any>(`${this.apiUrl}/books.php`, JSON.stringify(book), this.httpOptions)
+      .pipe(catchError(this.handleError));
   }
 
   /**
@@ -73,10 +67,9 @@ export class BookService {
    * @returns Observable<any>
    */
   deleteBook(id: number): Observable<any> {
-    return this.http.delete<any>(`${this.apiUrl}/books.php?id=${id}`)
-      .pipe(
-        catchError(this.handleError)
-      );
+    return this.http
+      .delete<any>(`${this.apiUrl}/books.php?id=${id}`)
+      .pipe(catchError(this.handleError));
   }
 
   /**

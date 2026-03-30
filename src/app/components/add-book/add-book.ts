@@ -24,7 +24,7 @@ export class AddBookComponent {
     publishedDate: '',
     pages: 0,
     category: '',
-    imageUrl: ''
+    imageUrl: '',
   };
 
   loading: boolean = false;
@@ -50,13 +50,13 @@ export class AddBookComponent {
     'Travel',
     'Children',
     'Education',
-    'Other'
+    'Other',
   ];
 
   constructor(
     private bookService: BookService,
-    private router: Router
-  ) { }
+    private router: Router,
+  ) {}
 
   /**
    * Handle form submission
@@ -87,7 +87,7 @@ export class AddBookComponent {
         this.loading = false;
         this.success = 'Book added successfully!';
         console.log('✅ Book added successfully:', response);
-        
+
         // Reset form after successful submission
         setTimeout(() => {
           this.resetForm();
@@ -98,14 +98,14 @@ export class AddBookComponent {
         this.loading = false;
         this.error = 'Failed to add book. Please try again.';
         console.error('❌ Error adding book:', error);
-        
+
         // For demo purposes, simulate success when backend is not available
         this.success = 'Book added successfully! (Demo mode - backend not connected)';
         setTimeout(() => {
           this.resetForm();
           this.router.navigate(['/list']);
         }, 2000);
-      }
+      },
     });
   }
 
@@ -168,7 +168,7 @@ export class AddBookComponent {
       publishedDate: '',
       pages: 0,
       category: '',
-      imageUrl: ''
+      imageUrl: '',
     };
     this.error = '';
     this.success = '';
