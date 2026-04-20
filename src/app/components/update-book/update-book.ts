@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { BookService } from '../../services/book';
 import { Book } from '../../models/book.interface';
 
 @Component({
   selector: 'app-update-book',
+  standalone: true,
+  imports: [CommonModule, FormsModule],
   templateUrl: './update-book.html',
   styleUrls: ['./update-book.css'],
 })

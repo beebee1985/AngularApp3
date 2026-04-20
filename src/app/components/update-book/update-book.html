@@ -4,13 +4,13 @@
   <input type="number" [(ngModel)]="bookId" id="bookId" />
   <button (click)="fetchBook()">Fetch Book</button>
   <div *ngIf="book">
-    <label>Title: <input [(ngModel)]="book.title" /></label><br />
-    <label>Author: <input [(ngModel)]="book.author" /></label><br />
-    <label>Description: <input [(ngModel)]="book.description" /></label><br />
-    <label>ISBN: <input [(ngModel)]="book.isbn" /></label><br />
-    <label>Published Date: <input [(ngModel)]="book.publishedDate" /></label><br />
-    <label>Pages: <input type="number" [(ngModel)]="book.pages" /></label><br />
-    <label>Category: <input [(ngModel)]="book.category" /></label><br />
+    <label>Title: <input [(ngModel)]="book.title" [ngModel]="book?.title" /></label><br />
+    <label>Author: <input [(ngModel)]="book.author" [ngModel]="book?.author" /></label><br />
+    <label>Description: <input [(ngModel)]="book.description" [ngModel]="book?.description" /></label><br />
+    <label>ISBN: <input [(ngModel)]="book.isbn" [ngModel]="book?.isbn" /></label><br />
+    <label>Published Date: <input [(ngModel)]="book.publishedDate" [ngModel]="book?.publishedDate" /></label><br />
+    <label>Pages: <input type="number" [(ngModel)]="book.pages" [ngModel]="book?.pages" /></label><br />
+    <label>Category: <input [(ngModel)]="book.category" [ngModel]="book?.category" /></label><br />
     <button (click)="updateBook()">Update</button>
   </div>
   <p>{{ message }}</p>
